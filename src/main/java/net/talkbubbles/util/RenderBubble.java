@@ -37,7 +37,7 @@ public class RenderBubble {
         matrixStack.translate(0.0D, playerHeight + 0.9F + TalkBubbles.CONFIG.chatHeight, 0.0D);
 
         float yawDegrees = toEulerXyzDegrees(new Quaternionf(cameraState.orientation)).y();
-        matrixStack.rotateDegrees(Axis.YP, yawDegrees);
+        matrixStack.mulPose(Axis.YP.rotationDegrees(yawDegrees));
 
         matrixStack.scale(0.025F * TalkBubbles.CONFIG.chatScale, -0.025F * TalkBubbles.CONFIG.chatScale, 0.025F);
 
